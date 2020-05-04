@@ -3,6 +3,7 @@ from django.db import models
 from django.utils.translation import gettext as _
 
 class squirrel(models.Model):
+
     Y = models.FloatField(
         help_text=_('Latitude'),
         max_length=100,
