@@ -3,19 +3,89 @@ from django.db import models
 from django.utils.translation import gettext as _
 
 class squirrel(models.Model):
-    Latitude = models.FloatField(
+    Y = models.FloatField(
         help_text=_('Latitude'),
         max_length=100,
         )
 
-    Longitude = models.FloatField(
+    X = models.FloatField(
         help_text=_('Longitude'),
         max_length=100,
         )
 
-     UniqueID = models.CharField(
-        help_text_('Longitude'),
+    UniqueID = models.CharField(
+        help_text_('Unique Squirrel ID'),
         max_length=100,
         )
+    
+    AM = 'AM'
+    PM = 'PM'
 
+    SHIFT_CH = (
+    (AM. 'AM'),
+    (PM, 'PM'),
+    )
+
+    Shift = models.CharField(
+        max_length=20,
+        choices = SHIFT_CH,
+        )
+
+    Date = models.DateField(
+    )
+
+    Kit = 'Kitten'
+    Ad = 'Adult'
+
+    AGE_CH = (
+    (Kit, 'Kitten'),
+    (Ad, 'Adult')
+    )
+
+    Age = models.CharField(
+        max_length=100,
+        choices = AGE_CH,
+        null = True,
+    )
+
+    GRAY = 'Gray',
+    CIN = 'Cinnamon',
+
+    FUR_CH = (
+    (GRAY, 'Gray'),
+    (CIN, 'Cinnamon'),
+    )
+
+    Fur = models.CharField(
+        help_text_('Fur Color'),
+        choices = FUR_CH,
+        null = True,
+    )
+
+    Location = models.CharField(
+        null = True,
+        max_length=100,
+    )
+
+    Spec_location = models.CharField(
+        help_text_('Location'),
+        null = True,
+        max_length=100,
+    )
+
+    Running = models.BooleanField(
+    default = False
+    )
+
+    Chasing = models.BooleanField(
+    default = False
+    )
+
+    Climbing = models.BooleanField(
+    default = False
+    )
+
+    Eating = models.BooleanField(
+    default = False
+    )
 
