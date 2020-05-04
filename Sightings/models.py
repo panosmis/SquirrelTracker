@@ -75,18 +75,35 @@ class squirrel(models.Model):
     )
 
     Running = models.BooleanField(
-    default = False
+    default = False,
     )
 
     Chasing = models.BooleanField(
-    default = False
+    default = False,
     )
 
     Climbing = models.BooleanField(
-    default = False
+    default = False,
     )
 
     Eating = models.BooleanField(
-    default = False
+    default = False,
+    )
+
+    Foraging = models.BooleanField(
+    default = False,
+    )
+
+    Other_activities = models.CharField(
+    null = True,
+    max_length=100,
+    )
+
+    Kuks = models.BooleanField(
+    default = False,
+    )
+
+    Quaas = models.BooleanField(
+    default = False,
     )
 
