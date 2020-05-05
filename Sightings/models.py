@@ -15,7 +15,7 @@ class squirrel(models.Model):
         )
 
     UniqueID = models.CharField(
-        help_text_('Unique Squirrel ID'),
+        help_text=_('Unique Squirrel ID'),
         max_length=100,
         )
     
@@ -23,7 +23,7 @@ class squirrel(models.Model):
     PM = 'PM'
 
     SHIFT_CH = (
-    (AM. 'AM'),
+    (AM, 'AM'),
     (PM, 'PM'),
     )
 
@@ -58,7 +58,7 @@ class squirrel(models.Model):
     )
 
     Fur = models.CharField(
-        help_text_('Fur Color'),
+        help_text=_('Fur Color'),
         choices = FUR_CH,
         null = True,
     )
@@ -69,7 +69,7 @@ class squirrel(models.Model):
     )
 
     Spec_location = models.CharField(
-        help_text_('Location'),
+        help_text=_('Location'),
         null = True,
         max_length=100,
     )
