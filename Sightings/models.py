@@ -52,20 +52,22 @@ class squirrel(models.Model):
     GRAY = 'Gray',
     CIN = 'Cinnamon',
 
-    FUR_CH = (
+    FUR_CH = [
     (GRAY, 'Gray'),
     (CIN, 'Cinnamon'),
-    )
+    ]
 
     Fur = models.CharField(
-        help_text=_('Fur Color'),
+        help_text=_('Primary Fur Color'),
         choices = FUR_CH,
-        null = True,
+        blank = True,
+        max_length = 20,
     )
 
     Location = models.CharField(
         null = True,
         max_length=100,
+        blank = True,
     )
 
     Spec_location = models.CharField(

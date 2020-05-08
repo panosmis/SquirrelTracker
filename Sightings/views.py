@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from .models import squirrel
 from .forms import SightForm
 
-def siqhting(request):
+def sighting(request):
     squirrels = squirrel.objects.all()
     context = {
             'squirrels':squirrels,
@@ -24,7 +24,7 @@ def update_sighting(request, UniqueID):
 
 
 def add():
-    if request.method == 'POST';
+    if request.method == 'POST':
          form = FORM(request.POST)
          if form.is_valid():
              context = {'form': form,}
@@ -49,3 +49,9 @@ def stats(request):
             }
     return render(request, 'Sightings/stats.html',context)
 
+def map (request):
+    Squirrels = squirrel.objects.all()[:100]
+    context = {
+            'Squirrels': Squirrels
+            }
+    return render (request, 'Sightings/map.html', context)
