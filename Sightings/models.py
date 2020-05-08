@@ -109,3 +109,26 @@ class squirrel(models.Model):
     default = False,
     )
 
+    Moans = models.BooleanField(
+    default = False,
+    )
+    
+    Tail_Flags = models.BooleanField(
+    default = False,
+    )
+
+    Tail_Twitches = models.BooleanField(
+    default = False,
+    )
+
+    Approaches = models.BooleanField(
+    default =  False,
+    )
+
+    Indifferent = models.BooleanField(
+    default = False,
+    )
+
+    Runs_From =models.BooleanField(
+    default = False,
+    )

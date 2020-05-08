@@ -26,8 +26,8 @@ class Command(BaseCommand):
                 Age = dict_['Age'],
                 Fur = dict_['Primary Fur Color'],
                 Location = dict_['Location'],
-                Spec_location = dict_['Special Location'],
-                Running = dict_['Running'.loweir()=='true', 
+                Spec_location = dict_['Specific Location'],
+                Running = dict_['Running'].lower()=='true', 
                 Chasing = dict_['Chasing'].lower()=='true',
                 Climbing = dict_['Climbing'].lower() == 'true',
                 Eating = dict_['Eating'].lower == 'true',
@@ -40,7 +40,7 @@ class Command(BaseCommand):
                 Tail_Twitches = dict_['Tail twitches'].lower() == 'true',
                 Approaches = dict_['Approaches'].lower() == 'true',
                 Indifferent = dict_['Indifferent'].lower() == 'true',
-                runs_from = dict_['Runs from'].lower() == 'true',
+                Runs_From = dict_['Runs from'].lower() == 'true',
                 ))
 
         squirrel.objects.bulk_create(sightings)
