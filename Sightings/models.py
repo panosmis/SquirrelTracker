@@ -49,19 +49,19 @@ class squirrel(models.Model):
         null = True,
     )
 
-    GRAY = 'Gray',
-    CIN = 'Cinnamon',
+    GRAY = 'Gray'
+    CIN = 'Cinnamon'
 
-    FUR_CH = [
+    FUR_CH = (
     (GRAY, 'Gray'),
     (CIN, 'Cinnamon'),
-    ]
+    )
 
     Fur = models.CharField(
         help_text=_('Primary Fur Color'),
         choices = FUR_CH,
         blank = True,
-        max_length = 20,
+        max_length = 10,
     )
 
     Location = models.CharField(
