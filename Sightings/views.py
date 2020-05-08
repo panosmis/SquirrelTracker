@@ -13,7 +13,7 @@ def sighting(request):
 
 
 def update_sighting(request, UniqueID):
-    squirrel = squirrel.objects.get(UniqueID = UniqueID)
+    squirrels = squirrel.objects.get(UniqueID = UniqueID)
     form = SightForm
     context = {
             'form':form,
@@ -24,11 +24,10 @@ def update_sighting(request, UniqueID):
 
 
 def add():
-    if request.method == 'POST':
-         form = FORM(request.POST)
-         if form.is_valid():
-             context = {'form': form,}
-             return render(request, 'Sightings/add.html', context)
+    form = FORM(request.POST)
+    if form.is_valid():
+        context = {'form': form,}
+        return render(request, 'Sightings/add.html', context)
 
 
 def stats(request):
