@@ -24,16 +24,28 @@ def update_sighting(request, UniqueID):
 
 
 def add():
+    if request.method == 'POST';
+         form = FORM(request.POST)
+         if form.is_valid():
+             context = {'form': form,}
+             return render(request, 'Sightings/add.html', context)
 
-    return 'To be filled'
 
+def stats(request):
+    num_squirrels = squirrel.objects.all().count()
+    old_squirrels = squirrel.objects.filter(Age = 'Adult').count()
+    cin_fur = squirrel.objects.filter(Fur = 'Cinnamon').count()
+    gray_fur = squirrel.objects.filter(Fur = 'Gray').count()
+    squirrel_moan = squirrel.objects.filter(Moans = 'TRUE').count()
+    twitchin_squirrel = squirrel.objects.filter(Tail_twitches = 'TRUE').count()
 
-def stats():
-
-    return 'To be filled'
-
-def map():
-
-    return "Should map be here though?"
-
+    context = {
+            'num_squirrels': num_squirrels,
+            'old_squirrels': old_squirrels,
+            'cin_fur': cin_fur,
+            'gray_fur': gray_fur,
+            'squirrel_moan': squirrel_moan,
+            'twitchin_squirrel': twitchin_squirrel
+            }
+    return render(request, 'Sightings/stats.html',context)
 
