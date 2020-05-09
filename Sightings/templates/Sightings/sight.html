@@ -1,6 +1,46 @@
-
-
 <!doctype html>
+<html lang="en">
+  <style>
+    .button {
+      color: #fff;
+      text-transform: uppercase;
+      text-decoration: none;
+      background: #ed3330;
+      padding: 20px;
+      border-radius: 5px;
+      display: inline-block;
+      border: none;
+      transition: all 0.4s ease 0s;
+      }
 
+    .button:hover {
+      background: #434343;
+      letter-spacing: 1px;
+      -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+      -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+      box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+      transition: all 0.4s ease 0s;
+      }
+  </style>
+  <head><title>The 2018 Central Park Squirrel Census Project</title></head>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <body>
+	    <div><br>
+		    <a href ='/map/'>
+			    <button type="button" class = "button">Click here to see the park map</button></a>
+		    <a href = 'stats/'>
+			    <button type="button" class = "button">Click here to see thestatistics about squirrels</button></a>
+		    <a href = 'add/'>
+			    <button type="button" class = "button">Click here to add new squirrel data</button></a>
+	    </div>
+	    <ul>
+		    <li><{Sightings.UniqueID}}>
+			    <a href = '{{Sightings.UniqueID}}'>Update the Information</a>
+		    </li>
+		    <main role ="main">
+		    </main>
+    </body>
 </html>
+
