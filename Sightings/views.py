@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse
-
+from django import forms
 from .models import squirrel
 from .forms import SightForm
 
@@ -14,7 +14,8 @@ def sighting(request):
 
 def update_sighting(request, UniqueID):
     squirrels = squirrel.objects.get(UniqueID = UniqueID)
-    form = SightForm
+   # squirrels = get_object_or_404(squirrel,pk = UniqueID)
+    form = SightForm(instance= squirrels)
     context = {
             'form':form,
             }
@@ -24,10 +25,10 @@ def update_sighting(request, UniqueID):
 
 
 def add():
-    form = FORM(request.POST)
-    if form.is_valid():
-        context = {'form': form,}
-        return render(request, 'Sightings/add.html', context)
+
+    form = SightForm()
+    context = {'form': form,}
+    return render(request, 'Sightings/add.html', context)
 
 
 def stats(request):
