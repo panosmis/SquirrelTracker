@@ -7,16 +7,22 @@ class squirrel(models.Model):
     Y = models.FloatField(
         help_text=_('Latitude'),
         max_length=100,
+        blank = True,
+        null = True,
+
         )
 
     X = models.FloatField(
         help_text=_('Longitude'),
         max_length=100,
+        blank = True,
+        null = True,
         )
 
     UniqueID = models.CharField(
         help_text=_('Unique Squirrel ID'),
         max_length=100,
+        primary_key = True,
         )
     
     AM = 'AM'
@@ -30,9 +36,12 @@ class squirrel(models.Model):
     Shift = models.CharField(
         max_length=20,
         choices = SHIFT_CH,
+        blank = True 
         )
 
     Date = models.DateField(
+        null = True,
+        blank = True
     )
 
     Kit = 'Kitten'
