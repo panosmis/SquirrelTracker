@@ -141,3 +141,8 @@ class squirrel(models.Model):
     Runs_From =models.BooleanField(
     default = False,
     )
+
+
+    def __str__(self):
+
+        return self.UniqueID
