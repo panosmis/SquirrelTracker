@@ -1,4 +1,4 @@
-from project.wsgi import Sightings
+from SquirrelTracker.wsgi import application
 
 # App Engine by default looks for a main.py file at the root of the app
 # directory with a WSGI-compatible object called app.
@@ -7,4 +7,4 @@ from project.wsgi import Sightings
 # App Engine without additional configuration.
 # Alternatively, you can add a custom entrypoint field in your app.yaml:
 # entrypoint: gunicorn -b :$PORT mysite.wsgi
-app = Sightings
+app = application
