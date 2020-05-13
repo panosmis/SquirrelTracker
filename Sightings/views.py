@@ -1,8 +1,11 @@
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render,redirect,get_object_or_404
 from django.http import HttpResponse
 from django import forms
+from django.urls import reverse_lazy 
 from .models import squirrel
-from .forms import SightForm
+from .forms import SquirrelForm
+import json
+import random
 
 def sighting(request):
     squirrels = squirrel.objects.all()
@@ -13,12 +16,11 @@ def sighting(request):
 
 
 def update_sighting(request, UniqueID):
-    squirrels = squirrel.objects.get(UniqueID = UniqueID)
-   # squirrels = get_object_or_404(squirrel,pk = UniqueID)
-    form = SightForm(instance= squirrels)
-    context = {
+    form = SquirrelForm(instance=squirrel)
+    context={
             'form':form,
-            }
+            'squirrel':squirrel
+    }
     return render(request,'Sightings/update.html', context)
 
 
@@ -26,7 +28,7 @@ def update_sighting(request, UniqueID):
 
 def add():
 
-    form = SightForm()
+    form = SquirrelForm()
     context = {'form': form,}
     return render(request, 'Sightings/add.html', context)
 
@@ -47,7 +49,7 @@ def stats(request):
             'squirrel_moan': squirrel_moan,
             'twitchin_squirrel': twitchin_squirrel
             }
-    return render(request, 'Sightings/stats.html',context)
+    return render(request, 'sightings/stats.html',context)
 
 def map (request):
     Squirrels = squirrel.objects.all()[:100]

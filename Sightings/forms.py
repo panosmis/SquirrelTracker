@@ -1,7 +1,7 @@
 from django.forms import ModelForm
 from .models import squirrel
 
-class SightForm(ModelForm):
+class SquirrelForm(ModelForm):
     class Meta:
 
         model = squirrel
