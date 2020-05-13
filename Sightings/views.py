@@ -8,20 +8,20 @@ import json
 import random
 
 def sighting(request):
-    squirrels = squirrel.objects.all()
+    Squirrels = squirrel.objects.all()
     context = {
-            'squirrels':squirrels,
+            'squirrels':Squirrels,
             }
     return render(request,'Sightings/sight.html', context)
 
 
-def update_sighting(request, UniqueID):
-
-    squirrel_ = squirrel.objects.get(UniqueID= UniqueID)
-    form = SquirrelForm(instance=squirrel_)
+def update_sighting(request,uniqueID ):
+    
+   # Squirrel = squirrel.objects.get(UniqueID=uniqueID)
+    form = SquirrelForm(instance=Squirrel)
     context={
             'form':form,
-            'squirrel':squirrel
+            'squirrel':Squirrel
     }
     return render(request,'Sightings/update.html', context)
 
@@ -58,4 +58,4 @@ def map (request):
     context = {
             'Squirrels': Squirrels
             }
-    return render (request, '/map.html', context)
+    return render (request, 'Sightings/map.html', context)
