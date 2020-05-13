@@ -12,16 +12,18 @@ def sighting(request):
     context = {
             'squirrels':squirrels,
             }
-    return render(request,'sightings/sight.html', context)
+    return render(request,'Sightings/sight.html', context)
 
 
 def update_sighting(request, UniqueID):
-    form = SquirrelForm(instance=squirrel)
+
+    squirrel_ = squirrel.objects.get(UniqueID= UniqueID)
+    form = SquirrelForm(instance=squirrel_)
     context={
             'form':form,
             'squirrel':squirrel
     }
-    return render(request,'sightings/update.html', context)
+    return render(request,'Sightings/update.html', context)
 
 
 
@@ -30,7 +32,7 @@ def add():
 
     form = SquirrelForm()
     context = {'form': form,}
-    return render(request, 'sightings/add.html', context)
+    return render(request, 'Sightings/add.html', context)
 
 
 def stats(request):
@@ -49,11 +51,11 @@ def stats(request):
             'squirrel_moan': squirrel_moan,
             'twitchin_squirrel': twitchin_squirrel
             }
-    return render(request, 'sightings/stats.html',context)
+    return render(request, 'Sightings/stats.html',context)
 
 def map (request):
     Squirrels = squirrel.objects.all()[:100]
     context = {
             'Squirrels': Squirrels
             }
-    return render (request, 'sightings/map.html', context)
+    return render (request, '/map.html', context)
