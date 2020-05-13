@@ -17,7 +17,7 @@ def sighting(request):
 
 def update_sighting(request,uniqueID ):
     
-   # Squirrel = squirrel.objects.get(UniqueID=uniqueID)
+    Squirrel = squirrel.objects.get(UniqueID=uniqueID)
     form = SquirrelForm(instance=Squirrel)
     context={
             'form':form,

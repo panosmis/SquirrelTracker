@@ -43,6 +43,10 @@ class Command(BaseCommand):
                 Runs_From = dict_['Runs from'].lower() == 'true',
                 ))
 
+
+
+            
+        squirrel.objects.all().delete()
         squirrel.objects.bulk_create(sightings)
 
 
