@@ -4,10 +4,9 @@ from . import views
 
 
 urlpatterns = [
-        path('sightings/', views.sighting, name = 'sighting'),
-        path('sightings/<UniqueID>/', views.update_sighting, name = 'update'),
-        path('sightings/add/', views.add , name = 'add'),
-        path('sightings/stats/', views.stats, name = 'stats'),
-        path('map/', views.map, name = 'map'),
-        ]
+        path('', views.sighting, name = 'sighting'),
+        path('<UniqueID>/', views.update_sighting, name = 'update'),
+        path('add/', views.add , name = 'add'),
+        path('stats/', views.stats, name = 'stats'),
+]
 
