@@ -29,18 +29,18 @@
 
     <body>
 	    <div><br>
-		    <a href ='/map/'>
+		    <a href ='sightings/map/'>
 			    <button type="button" class = "button">Click here to see the park map</button></a>
-		    <a href = 'stats/'>
+		    <a href = 'sightings/stats/'>
 			    <button type="button" class = "button">Click here to see the statistics about squirrels</button></a>
-		    <a href = 'add/'>
+		    <a href = 'sightings/add/'>
 			    <button type="button" class = "button">Click here to add new squirrel data</button></a>
 	    </div>
 
 	    <ul>
 		    {% for sighting in squirrel %}
-		    <li>{{sighting.UniqueID}}
-			    <a href = '{{sighting.UniqueID}}'>Update the Information</a>
+		    <li>
+			    <a href = '/sightings/{{sighting.UniqueID}}'>:Update the Information</a>
 		    </li>
 		    {% endfor %}
 	    </ul>
