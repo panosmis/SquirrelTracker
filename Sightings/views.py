@@ -15,7 +15,7 @@ def sighting(request):
     return render(request,'Sightings/sight.html', context)
 
 
-def update_sighting(request,uniqueID ):
+def update_sighting(request,uniqueID):
     
     Squirrel = squirrel.objects.get(UniqueID=uniqueID)
     form = SquirrelForm(instance=Squirrel)
@@ -28,7 +28,7 @@ def update_sighting(request,uniqueID ):
 
 
 
-def add():
+def add(request):
 
     form = SquirrelForm()
     context = {'form': form,}
@@ -40,7 +40,7 @@ def stats(request):
     old_squirrels = squirrel.objects.filter(Age = 'Adult').count()
     cin_fur = squirrel.objects.filter(Fur = 'Cinnamon').count()
     gray_fur = squirrel.objects.filter(Fur = 'Gray').count()
-    squirrel_moan = squirrel.objects.filter(Moans = 'TRUE').count()
+    squirrel_moan = squirrel.objects.filter(Moans = 'true').count()
     twitchin_squirrel = squirrel.objects.filter(Tail_twitches = 'TRUE').count()
 
     context = {

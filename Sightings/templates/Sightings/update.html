@@ -24,16 +24,19 @@ transition: all 0.4s ease 0s;
 }
 
 </style>
-  <head><<title>Update {{Squirrel.UniqueID} Information}</title></head>
+  <head><<title>Update {{form.instance.UniqueID} Information}</title></head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
 
-<form method ='GET'>
-	 <input class = 'button' type="submit" name="Submit">
- </form>
-  <br>
+ <body>
 
+	<form method ="post">
+		{%csrf_token%}
+		{{form.as_p}}
+	</form>
  </body>
+
+
  <a href='/sightings/' class=''><center><button type='button' class='button' target="_blank" rel="nofollow noopener">Back to the list pages</button></center></a>
 </html>

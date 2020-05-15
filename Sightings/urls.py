@@ -4,9 +4,6 @@ from . import views
 
 
 urlpatterns = [
-        path('', views.sighting, name = 'sighting'),
-        path('<str:uniqueID>/', views.update_sighting, name = 'update'),
-        path('add/', views.add , name = 'add'),
-        path('stats/', views.stats, name = 'stats'),
-]
+        path('', views.sighting, name = 'sighting'),        
+        ]
 

@@ -17,7 +17,10 @@ from django.contrib import admin
 from django.urls import path,include
 from Sightings import views
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('sightings/', include('Sightings.urls')), 
+    path('admin/', admin.site.urls), 
     path('map/',views.map),
+    path('sightings/sight/',views.sighting),
+    path('sightings/add/',views.add),
+    path('sightings/stats/',views.stats),
+    path('sightings/<str:uniqueID>/',views.update_sighting),
    ] 
