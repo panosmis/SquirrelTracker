@@ -14,7 +14,7 @@ It is located at /sightings
 
 - One extention to Sightings is /sightings/<unique-squirrel-id>, where users can update a particular sighting with the following fields: latitude, longitude, squirrel ID, shift, age, fur color, location, specific location, running, chasing, climbing, eating and foraging among other activities.
 
-- Another extention to Sightings is /sightings/stats, where users can view general statistics about a particular sighting. 
+- Another extention to Sightings is /sightings/stats, where users can view general statistics about all squirrel sightings. 
 
 # If you have any questions,
 you can always reach out to the developpers that worked on this project: Lynn Bal (lb3239) and Panagiotis Misirlis (pm3560)
