@@ -143,6 +143,4 @@ class squirrel(models.Model):
     )
 
 
-    def __str__(self):
-
-        return self.UniqueID
+   
