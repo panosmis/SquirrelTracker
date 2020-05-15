@@ -38,16 +38,28 @@
 	    </div>
 
 	    <ul>
-		    {% for sighting in Squirrels%}
-		    <tr>
-			    <td> {{sighting.id}}</td>
-			    <td> {{sighting.UniqueID}}</td>
-			    <td> {{sighting.Date}}</td>
-		    <li>
-
-			    <a href = '/sightings/{{fsighting.UniqueID}}/'>:Update the Information</a>
-		    </li>
-		    {% endfor %}
+		<table class="table table-hover">
+	      		<thead>
+			<h2 style = "font-family:Allerta+Stencil,serif;font-size:32px;font-style:normal;">Squirrel Sightings Report</h2>
+			<tr>
+		  	<th scope="col">Index</th>
+		  	<th scope="col">Unique Squirrel ID</th>
+		  	<th scope="col">Date of the Sighting</th>
+		 	<th scope="col">Unique Squirrel Sighting Link</th>
+			</tr>
+	      		</thead>
+	      		<tbody>
+	   
+			    {% for sighting in Squirrels%}
+			    <tr>
+				    <td> {{sighting.id}}</td>
+				    <td> {{sighting.UniqueID}}</td>
+				    <td> {{sighting.Date}}</td>
+				    <td><a href = '/sightings/{{sighting.UniqueID}}/'>{{sighting.UniqueID}}</a></td>
+			    </tr>
+			    {% endfor %}
+			</tbody>
+			    
 	    </ul>
 	    </div>
 		    <main role ="main">
