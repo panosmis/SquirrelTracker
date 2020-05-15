@@ -28,10 +28,13 @@
 	<meta name="viewport" content="width=decide-width, initial-scale=1.0, shrink-to-fit=no">
 </head>
 <body>
+ <form method="post">
+           {% csrf_token %}
 
+           {{ form.as_p }}
 
-
-
-
+           <input type="submit" class='button' name="Add Squirrel" />
+     </form>
 </body>
+
 </html>
