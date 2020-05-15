@@ -39,8 +39,13 @@
 
 	    <ul>
 		    {% for sighting in Squirrels%}
+		    <tr>
+			    <td> {{sighting.id}}</td>
+			    <td> {{sighting.UniqueID}}</td>
+			    <td> {{sighting.Date}}</td>
 		    <li>
-			    <a href = '/sightings/{{sighting.UniqueID}}/'>:Update the Information</a>
+
+			    <a href = '/sightings/{{fsighting.UniqueID}}/'>:Update the Information</a>
 		    </li>
 		    {% endfor %}
 	    </ul>

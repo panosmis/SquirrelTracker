@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect,get_object_or_404
+from django.shortcuts import render
 from django.http import HttpResponse
 from django import forms
 from django.urls import reverse_lazy 
@@ -18,11 +18,11 @@ def sighting(request):
 def update_sighting(request,uniqueID):
     Squirrel = squirrel.objects.get(UniqueID=uniqueID)
     form = SquirrelForm(instance=Squirrel)
-     context={
+    context={
               'form':form,
                'squirrel':Squirrel
                 }
-      return render(request,'Sightings/update.html', context)
+    return render(request,'Sightings/update.html', context)
 
 
 
