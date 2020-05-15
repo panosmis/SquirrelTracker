@@ -21,4 +21,5 @@ you can always reach out to the developpers that worked on this project: Lynn Ba
 (IEOR 4501 - section 1)
 
 ## Even if you can't go outside to look at squirrels, you could always do so from the comfort of your couch using out application, 
+## Who knew that going outside was just one click away? http://data-analytics-project-267919.appspot.com/
 ## Enjoy!
